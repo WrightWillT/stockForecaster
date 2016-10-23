@@ -26,6 +26,6 @@ shinyServer(function(input,output) {
     
     # convert to time series and set start date to 1 with freq = 12 so hw() can see the seasonality
     stock_ts <- ts(rev(stock_data$Adj.Close), start = 1, frequency = 12)
-    plot(hw(stock_ts, seasonality = "mult", damped = TRUE))
+    plot(hw(stock_ts, seasonality = "mult", damped = TRUE), xlab = "Years Since IPO", ylab = "Closing Price")
   })
 })
